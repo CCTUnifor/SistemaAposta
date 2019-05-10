@@ -1,0 +1,8 @@
+<template>
+  <div class="input-group mb-3">
+    <label if.bind="!!label" for.bind="id" style="width: 100%">${label}</label>
+    <select class="custom-select" id.bind="id" value.bind="value">
+      <option repeat.for="e of options" model.bind="e.key">${e.value}</option>
+    </select>
+  </div>
+</template>

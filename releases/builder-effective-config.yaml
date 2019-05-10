@@ -1,0 +1,13 @@
+directories:
+  output: releases
+  buildResources: build/resources
+  app: dist
+appId: com.you.app.id
+asarUnpack:
+  - '**/*.node'
+files:
+  - filter:
+      - '!**/*.map'
+      - '!node_modules'
+      - '!bundle-report-*.html'
+electronVersion: 2.0.18

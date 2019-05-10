@@ -1,0 +1,18 @@
+# electron-builder configuration
+appId: com.you.app.id
+directories:
+  app: 'dist'
+  buildResources: 'build/resources'
+  output: 'releases'
+# Ensure that native binaries do not get packed in the app.asar archive
+asarUnpack:
+  - '**/*.node'
+files:
+  # Do not include sourcemaps
+  - '!**/*.map'
+  # We dont need node_modules
+  - '!node_modules'
+  # or the bundle reports
+  - '!bundle-report-*.html'
+  # - 'node_modules/bootstrap/dist/css/bootstrap.min.css'
+  # - 'node_modules/bootstrap/dist/css/bootstrap.min.css.map'

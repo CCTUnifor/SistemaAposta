@@ -1,0 +1,21 @@
+@import './home/index.styl';
+@import './apostador/cadastro/cadastro-apostador.page.styl';
+
+.bd-callout {
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #eee;
+  border-left-color: rgb(238, 238, 238);
+  border-left-width: 1px;
+  border-left-width: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.bd-callout-without-margin-bottom {
+  margin-bottom: 0;
+}
+
+.bd-callout-warning {
+  border-left-color: #f0ad4e;
+}

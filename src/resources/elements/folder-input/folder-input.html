@@ -1,0 +1,9 @@
+<template>
+  <div class="input-group mb-3">
+    <label if.bind="!!label" for.bind="id" style="display: block; width: 100%">${label}</label>
+    <div class="custom-file">
+      <input type="file" id.bind="id" directory webkitdirectory mozdirectory files.bind="files" />
+      <label class="custom-file-label" for.bind="id"> ${!!path ? path : 'Escolher pasta'} </label>
+    </div>
+  </div>
+</template>

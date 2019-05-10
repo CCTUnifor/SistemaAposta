@@ -1,0 +1,22 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": false,
+    "strictPropertyInitialization": false,
+    "no-string-literal": true,
+    "target": "es2017",
+    "module": "esnext",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "sourceRoot": "src",
+    "sourceMap": true,
+    "baseUrl": "src",
+    "lib": ["es2017", "dom"]
+  },
+  "include": ["./src/**/*.ts", "./custom_typings/**/*.d.ts"]
+}
