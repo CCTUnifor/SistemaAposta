@@ -8,6 +8,7 @@ import '../../../extensions/date.extensions';
 import '../../../extensions/number.extensions';
 import '../../../extensions/string.extensions';
 import { ApostadorAction } from './../../../actions/apostador.action';
+import { Bolao } from './Bolao';
 
 @autoinject
 @connectTo({
@@ -16,19 +17,18 @@ import { ApostadorAction } from './../../../actions/apostador.action';
         frameworks: (store) => store.state.pipe(pluck('frameworks')),
     }
 })
-export class CadastroApostadorPage {
-    private apostador: Apostador;
+export class CadastroBolaoPage {
+    private bolao: Bolao;
 
     constructor(private router: Router, private store: Store<IState>, private apostadorAction: ApostadorAction) {
     }
 
     public attached() {
-        this.apostador = new Apostador();
+        this.bolao = new Bolao();
     }
 
     public salvar() {
         this.store.dispatch(this.apostadorAction.add, this.apostador);
-        this.router.navigate("");
     }
 
     public cancelar() {
