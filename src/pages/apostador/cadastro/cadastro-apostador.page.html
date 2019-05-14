@@ -1,3 +1,33 @@
 <template>
-  Cadastro Apostador
+  <card title="Cadastro Apostador">
+    <div class="input-group mb-3">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" id="nome" aria-describedby="basic-addon3" value.bind="apostador.nome" />
+    </div>
+
+    <div class="input-group mb-3">
+      <label for="cpf">CPF</label>
+      <input type="text" class="form-control" id="cpf" aria-describedby="basic-addon3" value.bind="apostador.cpf" />
+    </div>
+
+    <div class="input-group mb-3">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" aria-describedby="basic-addon3" value.bind="apostador.email" />
+    </div>
+
+    <div class="input-group mb-3">
+      <label for="telefone">Telefone</label>
+      <input type="text" class="form-control" id="telefone" aria-describedby="basic-addon3"
+        value.bind="apostador.telefone" />
+    </div>
+
+    <div class="input-group mb-3">
+      <label for="setor">Setor</label>
+      <input type="text" class="form-control" id="setor" aria-describedby="basic-addon3"
+        value.bind="apostador.setor" />
+    </div>
+
+    <button class="btn btn-primary" click.delegate="salvar()">Salvar</button>
+    <button class="btn btn-primary">Voltar</button>
+  </card>
 </template>

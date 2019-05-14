@@ -5,5 +5,6 @@ export function configure(config: FrameworkConfiguration) {
     PLATFORM.moduleName('./elements/folder-input/folder-input'),
     PLATFORM.moduleName('./elements/select-dropdown/select-dropdown'),
     PLATFORM.moduleName('./elements/usb-dropdown/usb-dropdown'),
+    PLATFORM.moduleName('./elements/card/card'),
   ]);
 }
