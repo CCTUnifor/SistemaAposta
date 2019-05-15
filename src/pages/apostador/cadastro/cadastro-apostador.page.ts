@@ -2,12 +2,12 @@ import { autoinject } from 'aurelia-framework';
 import { Router } from 'aurelia-router';
 import { connectTo, Store } from 'aurelia-store';
 import { pluck } from 'rxjs/operators';
-import { Apostador } from '../../../entities/Apostador';
-import { IState } from '../../../entities/State';
+import { ApostadorAction } from "../../../actions/apostador.action";
+import { Apostador } from '../../../entities/apostador';
+import { IState } from '../../../entities/state';
 import '../../../extensions/date.extensions';
 import '../../../extensions/number.extensions';
 import '../../../extensions/string.extensions';
-import { ApostadorAction } from './../../../actions/apostador.action';
 
 @autoinject
 @connectTo({

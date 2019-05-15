@@ -1,9 +1,11 @@
 
-import { Apostador } from './Apostador';
+import { Apostador } from './apostador';
 export interface IState {
   apostadores: Apostador[];
+  boloes: Apostador[];
 }
 
 export const initialState: IState = {
-  apostadores: []
+  apostadores: [],
+  boloes: []
 };

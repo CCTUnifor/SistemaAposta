@@ -1,13 +1,7 @@
-import { autoinject } from "aurelia-framework";
-import { Apostador } from "../entities/Apostador";
-import { IState } from "../entities/State";
+import { Apostador } from "../entities/apostador";
+import { Action } from "./base.action";
 
-@autoinject
-export class ApostadorAction {
-    public  add = (state: IState, apostador: Apostador) => {
-        const newState = { ...state };
-        newState.apostadores = [...newState.apostadores, apostador];
-    
-        return newState;
-    }
+export class ApostadorAction extends Action<Apostador> {
+    public rep: string = "apostadores";
 }
+

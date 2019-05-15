@@ -1,7 +1,7 @@
 import { bootstrap } from 'aurelia-bootstrapper';
 import { Aurelia, PLATFORM } from 'aurelia-framework';
 import { App } from './app';
-import { initialState } from './entities/State';
+import { initialState } from './entities/state';
 import environment from './environment';
 import { DatabaseGlobalInstance } from './repository/database-global-instance';
 

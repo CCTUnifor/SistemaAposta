@@ -2,20 +2,27 @@ import { autoinject, inject, PLATFORM  } from 'aurelia-framework';
 import { Router, RouterConfiguration } from 'aurelia-router';
 import { Store } from 'aurelia-store';
 import 'bootstrap';
-import { ApostadorAction } from './actions/apostador.action';
-import { IState } from './entities/State';
+import { ApostadorAction } from "./actions/apostador.action";
+import { BolaoAction } from './actions/bolao.action';
+import { IState } from './entities/state';
 
 @autoinject
 export class App {
-  constructor(private router: Router, private store: Store<IState>, private apostadorAction: ApostadorAction) {
+  constructor(
+    private router: Router, 
+    private store: Store<IState>, 
+    private apostadorAction: ApostadorAction,
+    private bolaoAction: BolaoAction) {
   }
 
   public attached() {
     this.store.registerAction("AddApostadorAction", this.apostadorAction.add);
+    this.store.registerAction("AddBolaoAction", this.bolaoAction.add);
   }
 
   public detached() {
     this.store.unregisterAction(this.apostadorAction.add);
+    this.store.unregisterAction(this.bolaoAction.add);
   }
 
   public configureRouter(config: RouterConfiguration, router: Router): void {
@@ -38,9 +45,9 @@ export class App {
         name: 'cadastro-apostador',
         route: ['cadastro/apostador'],
         title: 'Cadastro de Apostador'
-      }
+      },
       {
-        moduleId: PLATFORM.moduleName('pages/apostador/cadastro/cadastro-apostador.page'),
+        moduleId: PLATFORM.moduleName('pages/bolao/cadastro/cadastro-bolao.page'),
         name: 'cadastro-bolao',
         route: ['cadastro/bolao'],
         title: 'Cadastro de Bolão'
