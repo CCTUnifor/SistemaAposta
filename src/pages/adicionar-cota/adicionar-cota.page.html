@@ -1,0 +1,30 @@
+<template>
+    <card title="Adicionar Cota" class="adicionar-cota">
+        <div class="dropdown">
+            <label for="">Bolão</label>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ${!!bolaoSelecionado ? bolaoSelecionado.apostador.nome : "Selecione o bolão"}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" repeat.for="bolao of boloes" click.delegate="selecionarBolao(bolao)">
+                    ${bolao.nome}
+                </a>
+            </div>
+        </div>
+
+        <div class="dropdown" if.bind="!!bolaoSelecionado">
+            <label for="">Apostador</label>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ${!!apostadorSelecionado ? apostadorSelecionado.nome : "Selecione o apostador"}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" repeat.for="bolaoApostador of bolaoSelecionado.apostadores"
+                    click.delegate="selecionarApostador(bolaoApostador)">
+                    ${bolaoApostador.apostador.nome}
+                </a>
+            </div>
+        </div>
+    </card>
+</template>

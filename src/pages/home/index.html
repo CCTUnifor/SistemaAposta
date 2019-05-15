@@ -1,3 +1,23 @@
 <template>
-  Home
+  <div>
+    <h3>Apostadores</h3>
+    <ul>
+      <li repeat.for="apostador of apostadores">
+          ${apostador.nome}
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3>Boloes</h3>
+    <ul>
+      <li repeat.for="bolao of boloes">
+        ${bolao.nome}
+        <ul>
+          <li repeat.for="bolaoApostador of bolao.apostadores">
+            ${bolaoApostador.apostador.nome}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </template>

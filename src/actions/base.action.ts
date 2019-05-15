@@ -3,7 +3,7 @@ export abstract class Action<T> {
 
     public  add = (state: any, entity: T) => {
         const newState = { ...state };
-        newState[this.rep] = [...newState.apostadores, entity];
+        newState[this.rep] = [...newState[this.rep], entity];
     
         return newState;
     }

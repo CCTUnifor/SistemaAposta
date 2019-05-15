@@ -47,19 +47,18 @@ export class App {
         title: 'Cadastro de Apostador'
       },
       {
+        moduleId: PLATFORM.moduleName('pages/adicionar-cota/adicionar-cota.page'),
+        name: 'adicionar-cota',
+        route: ['adicionar-cota'],
+        title: 'Adicionar Cota'
+      },
+      {
         moduleId: PLATFORM.moduleName('pages/bolao/cadastro/cadastro-bolao.page'),
         name: 'cadastro-bolao',
         route: ['cadastro/bolao'],
         title: 'Cadastro de Bolão'
       },
-      {
-        moduleId: PLATFORM.moduleName('pages/pagamento-cota/pagamento-cota.page'),
-        name: 'pagamento-cota',
-        route: ['pagamento-cota'],
-        title: 'Pagamento de Cotas'
-      }
     ]);
     config.fallbackRoute('');
-    console.log(config.instructions[0])
   }
 }
