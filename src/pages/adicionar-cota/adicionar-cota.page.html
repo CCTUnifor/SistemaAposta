@@ -2,22 +2,12 @@
   <card title="Adicionar Cota" class="adicionar-cota">
     <div class="dropdown">
       <label for="">Bolão</label>
-      <button
-        class="btn btn-secondary dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
+      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
         ${!!bolaoSelecionado ? bolaoSelecionado.nome : "Selecione o bolão"}
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a
-          class="dropdown-item"
-          repeat.for="bolao of boloes"
-          click.delegate="selecionarBolao(bolao)"
-        >
+        <a class="dropdown-item" repeat.for="bolao of boloes" click.delegate="selecionarBolao(bolao)">
           ${bolao.nome}
         </a>
       </div>
@@ -25,22 +15,13 @@
 
     <div class="dropdown" if.bind="!!bolaoSelecionado">
       <label for="">Apostador</label>
-      <button
-        class="btn btn-secondary dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
+      <button class="btn btn-outline-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
         ${!!apostadorSelecionado ? apostadorSelecionado.apostador.nome : "Selecione o apostador"}
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a
-          class="dropdown-item"
-          repeat.for="bolaoApostador of bolaoSelecionado.apostadores"
-          click.delegate="selecionarApostador(bolaoApostador)"
-        >
+        <a class="dropdown-item" repeat.for="bolaoApostador of bolaoSelecionado.apostadores"
+          click.delegate="selecionarApostador(bolaoApostador)">
           ${bolaoApostador.apostador.nome}
         </a>
       </div>
@@ -53,21 +34,21 @@
         </tr>
         <tr repeat.for="cota of apostadorSelecionado.cotas" class="mini-crud__table__body">
           <td class="mini-crud__table__body__value">
-              <input type="text" value.bind="cota.valor" />
+            <input type="text" value.bind="cota.valor" />
           </td>
         </tr>
       </table>
 
       <div class="mini-crud__footer">
-        <button class="btn btn-primary btn-sm" click.delegate="adicionarNovaCota(apostadorSelecionado)">
+        <button class="btn btn-outline-primary btn-sm" click.delegate="adicionarNovaCota(apostadorSelecionado)">
           Adicionar nova cota
         </button>
       </div>
     </div>
 
     <div class="adicionar-cota__footer">
-        <button class="btn btn-secondary" click.delegate="cancelar()" style="margin-right: 15px;">Voltar</button>
-        <button class="btn btn-primary" click.delegate="salvar()">Salvar</button>
+      <button class="btn btn-secondary" click.delegate="cancelar()" style="margin-right: 15px;">Voltar</button>
+      <button class="btn btn-primary" click.delegate="salvar()">Salvar</button>
     </div>
   </card>
 </template>

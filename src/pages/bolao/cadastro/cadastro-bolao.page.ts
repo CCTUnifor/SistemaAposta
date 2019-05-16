@@ -26,6 +26,9 @@ export class CadastroBolaoPage {
 
     public attached() {
         this.bolao = new Bolao();
+        if (this.bolao.apostadores.length === 0) {
+            this.bolao.apostadores.push(new BolaoApostador());
+        }
     }
 
     public salvar() {

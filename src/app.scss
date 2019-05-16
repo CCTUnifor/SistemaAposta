@@ -7,3 +7,30 @@
 .navbar-light {
     background-color: #b7d6cc !important;
 }
+
+.mini-crud {
+    width: 100%;
+    padding: 15px 0px;
+    display: block;
+
+    &__table {
+        width: 100%;
+        padding: 15px 0px;
+
+        &__header {
+            border: 1px solid #ced4da;
+            text-align: left;
+
+            &__title {
+                padding: 5px 10px;
+            }
+        }
+
+        &__body {
+            &__value {
+                border: 1px solid #ced4da;
+                padding: 10px;
+            }
+        }
+    }
+}

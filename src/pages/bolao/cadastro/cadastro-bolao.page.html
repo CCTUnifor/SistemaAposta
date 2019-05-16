@@ -4,21 +4,32 @@
       <label for="nome">Nome</label>
       <input type="text" class="form-control" id="nome" aria-describedby="basic-addon3" value.bind="bolao.nome" />
     </div>
-    <div class="form-group">
-      <p>Apostadores</p>
-      <div repeat.for="apostadorBolao of bolao.apostadores">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            ${!!apostadorBolao.apostador ? apostadorBolao.apostador.nome : "Apostador"}
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" click.delegate="selecionar(apostadorBolao, apostador)"
-              repeat.for="apostador of apostadores">${apostador.nome}</a>
-          </div>
-        </div>
+
+    <div class="mini-crud">
+      <table class="mini-crud__table">
+        <tr class="mini-crud__table__header">
+          <th class="mini-crud__table__header__title">Apostador</th>
+        </tr>
+        <tr repeat.for="apostadorBolao of bolao.apostadores" class="mini-crud__table__body">
+          <td class="mini-crud__table__body__value">
+            <div class="dropdown">
+              <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ${!!apostadorBolao.apostador ? apostadorBolao.apostador.nome : "Selecione o apostador"}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" click.delegate="selecionar(apostadorBolao, apostador)"
+                  repeat.for="apostador of apostadores">${apostador.nome}</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="mini-crud__footer">
+        <button class="btn btn-outline-primary btn-sm" click.delegate="novo()">
+          Adicionar novo apostador
+        </button>
       </div>
-      <button class="btn btn-primary  btn-small" click.delegate="novo()">Add</button>
     </div>
 
     <button class="btn btn-secondary" click.delegate="cancelar()" style="margin-right: 15px;">Voltar</button>
