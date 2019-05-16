@@ -1,8 +1,8 @@
 version: 1.0.0
 files:
   - url: aposta-setup-1.0.0.exe
-    sha512: lgdez43earhQazb4a1TzF0LzpkMibLGCp9MTsMwM5ue6yXvS3qz3UnTGGX3VE73zI8+dJrepS4+nQkQjo/2Evg==
-    size: 38689599
+    sha512: n3lC7t9ap3JLKxZ4BX2BFv4vIRiho9VCcE5dBV65emiA5x86Il8g4yR0z1NC0R6wwhEo+WfjhlA/PNvNdq8Eww==
+    size: 37156668
 path: aposta-setup-1.0.0.exe
-sha512: lgdez43earhQazb4a1TzF0LzpkMibLGCp9MTsMwM5ue6yXvS3qz3UnTGGX3VE73zI8+dJrepS4+nQkQjo/2Evg==
-releaseDate: '2019-05-10T03:11:04.917Z'
+sha512: n3lC7t9ap3JLKxZ4BX2BFv4vIRiho9VCcE5dBV65emiA5x86Il8g4yR0z1NC0R6wwhEo+WfjhlA/PNvNdq8Eww==
+releaseDate: '2019-05-16T02:47:45.386Z'
