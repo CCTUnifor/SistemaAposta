@@ -4,8 +4,8 @@ import { pluck } from 'rxjs/operators';
 import '../../extensions/date.extensions';
 import '../../extensions/number.extensions';
 import '../../extensions/string.extensions';
-import { Apostador } from './../../entities/apostador';
-import { Bolao } from './../../entities/bolao';
+import { Apostador } from '../../entities/apostador';
+import { Bolao } from '../../entities/bolao';
 
 @autoinject
 @connectTo({

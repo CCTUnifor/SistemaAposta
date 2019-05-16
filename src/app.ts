@@ -18,6 +18,7 @@ export class App {
   public attached() {
     this.store.registerAction("AddApostadorAction", this.apostadorAction.add);
     this.store.registerAction("AddBolaoAction", this.bolaoAction.add);
+    this.store.registerAction("UpdateBolaoAction", this.bolaoAction.update);
   }
 
   public detached() {
