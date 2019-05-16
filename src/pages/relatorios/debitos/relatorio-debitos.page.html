@@ -1,3 +1,20 @@
 <template>
-    Relatório débitos
+    <card title="Relatório débitos" class="relatorio relatorio__debitos">
+        <table>
+            <tr>
+                <th>Bolão</th>
+                <th>Apostador</th>
+                <th>Cota</th>
+                <th>Pago</th>
+            </tr>
+            <tr repeat.for="cota of cotas">
+                <td>${cota.bolaoApostador.bolao.nome}</td>
+                <td>${cota.bolaoApostador.apostador.nome}</td>
+                <td>${cota.valor}</td>
+                <td>
+                    <input type="checkbox" aria-label="Checkbox for following text input" checked.bind="cota.pago" change.delegate="changed()">
+                </td>
+            </tr>
+        </table>
+    </card>
 </template>

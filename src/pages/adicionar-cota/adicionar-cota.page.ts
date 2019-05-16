@@ -1,12 +1,12 @@
+import { autoinject, observable } from "aurelia-framework";
 import { Router } from 'aurelia-router';
-import { BolaoAction } from './../../actions/bolao.action';
-import { observable, autoinject } from "aurelia-framework";
 import { connectTo, Store } from "aurelia-store";
 import { pluck } from "rxjs/operators";
-import { Bolao } from '../../entities/bolao';
-import { IState } from './../../entities/State';
+import { BolaoAction } from './../../actions/bolao.action';
+import { Bolao } from './../../entities/bolao';
 import { BolaoApostador } from './../../entities/bolao-apostador';
-import { Cota } from 'entities/Cota';
+import { Cota } from './../../entities/Cota';
+import { IState } from './../../entities/State';
 
 @autoinject
 @connectTo({
@@ -31,12 +31,13 @@ export class AdicionarCotaPage {
     }
 
     private adicionarNovaCota(apostador: BolaoApostador) {
-        apostador.cotas.push(new Cota());
+        apostador.cotas.push(new Cota(apostador));
     }
 
     private apostadorSelecionadoChanged() {
-        if (this.apostadorSelecionado.cotas.length == 0)
-            this.apostadorSelecionado.cotas.push(new Cota());
+        if (this.apostadorSelecionado.cotas.length === 0) {
+            this.apostadorSelecionado.cotas.push(new Cota(this.apostadorSelecionado));
+        }
     }
 
     private salvar() {
