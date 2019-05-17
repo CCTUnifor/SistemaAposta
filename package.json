@@ -12,7 +12,8 @@
     "build:dev": "cross-env TS_NODE_PRETTY=true TS_NODE_PROJECT=./build/tsconfig.json webpack --config ./build/webpack.config.ts",
     "watch": "yarn build:dev && cross-env TS_NODE_PRETTY=true TS_NODE_PROJECT=./build/tsconfig.json webpack-dev-server --config ./build/webpack.config.ts --hot --inline",
     "release": "electron-builder --config ./build/release.yml",
-    "fix": "prettier --write \"./{src,build}/**/*.ts\" && tslint --fix --force --format stylish \"./{src,build}/**/*.ts\""
+    "fix": "prettier --write \"./{src,build}/**/*.ts\" && tslint --fix --force --format stylish \"./{src,build}/**/*.ts\"",
+    "test": "mocha 'test/**/*.js'"
   },
   "main": "main.js",
   "build.asar": false,
@@ -45,9 +46,11 @@
     "googleapis-common": "0.5.0",
     "jquery": "^3.3.1",
     "jszip": "3.1.5",
+    "mocha": "^6.1.4",
     "moment": "^2.24.0",
     "popper.js": "1.14.6",
     "scriptjs": "^2.5.9",
+    "spectron": "^5.0.0",
     "sql.js": "0.5.0"
   },
   "devDependencies": {

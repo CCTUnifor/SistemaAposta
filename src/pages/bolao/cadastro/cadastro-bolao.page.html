@@ -13,12 +13,12 @@
         <tr repeat.for="apostadorBolao of bolao.apostadores" class="mini-crud__table__body">
           <td class="mini-crud__table__body__value">
             <div class="dropdown">
-              <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+              <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="lookup-apostador"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 ${!!apostadorBolao.apostador ? apostadorBolao.apostador.nome : "Selecione o apostador"}
               </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" click.delegate="selecionar(apostadorBolao, apostador)"
+              <div class="dropdown-menu" aria-labelledby="lookup-apostador">
+                <a class="dropdown-item" click.delegate="selecionar(apostadorBolao, apostador)" id.bind="apostador.id"
                   repeat.for="apostador of apostadores">${apostador.nome}</a>
               </div>
             </div>
@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <button class="btn btn-secondary" click.delegate="cancelar()" style="margin-right: 15px;">Voltar</button>
-    <button class="btn btn-primary" click.delegate="salvar()">Salvar</button>
+    <button class="btn btn-secondary" click.delegate="cancelar()" style="margin-right: 15px;" id="voltar">Voltar</button>
+    <button class="btn btn-primary" click.delegate="salvar()" id="salvar">Salvar</button>
   </card>
 </template>

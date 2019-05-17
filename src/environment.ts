@@ -9,8 +9,9 @@ const mainProcess: NodeJS.Process = electron
 export default {
   debug: mainProcess.argv.some(a => a.includes('--debug')),
   devTools: mainProcess.argv.some(a => a.includes('--dev-tools')),
-  environment: (process.env.production ? 'production' : 'development') as
+  environment: (process.env.production ? 'production' : process.env.testing ? 'testing' : 'development') as
     | 'production'
-    | 'development',
+    | 'development'
+    | 'testing',
   packaged: mainProcess.defaultApp === undefined
 };

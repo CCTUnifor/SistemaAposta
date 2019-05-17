@@ -2,12 +2,12 @@
   <card title="Adicionar Cota" class="adicionar-cota">
     <div class="dropdown">
       <label for="">Bolão</label>
-      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="lookup-bolao" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
         ${!!bolaoSelecionado ? bolaoSelecionado.nome : "Selecione o bolão"}
       </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" repeat.for="bolao of boloes" click.delegate="selecionarBolao(bolao)">
+      <div class="dropdown-menu" aria-labelledby="lookup-bolao">
+        <a class="dropdown-item" repeat.for="bolao of boloes" click.delegate="selecionarBolao(bolao)" id.bind="bolao.id">
           ${bolao.nome}
         </a>
       </div>
@@ -15,13 +15,13 @@
 
     <div class="dropdown" if.bind="!!bolaoSelecionado">
       <label for="">Apostador</label>
-      <button class="btn btn-outline-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+      <button class="btn btn-outline-secondary dropdown-toggle btn-sm" type="button" id="lookup-apostador" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
         ${!!apostadorSelecionado ? apostadorSelecionado.apostador.nome : "Selecione o apostador"}
       </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <div class="dropdown-menu" aria-labelledby="lookup-apostador">
         <a class="dropdown-item" repeat.for="bolaoApostador of bolaoSelecionado.apostadores"
-          click.delegate="selecionarApostador(bolaoApostador)">
+          click.delegate="selecionarApostador(bolaoApostador)" id.bind="bolaoApostador.apostador.id">
           ${bolaoApostador.apostador.nome}
         </a>
       </div>
@@ -34,7 +34,7 @@
         </tr>
         <tr repeat.for="cota of apostadorSelecionado.cotas" class="mini-crud__table__body">
           <td class="mini-crud__table__body__value">
-            <input type="text" value.bind="cota.valor" />
+            <input type="text" value.bind="cota.valor" id="cota-id" />
           </td>
         </tr>
       </table>
@@ -47,8 +47,8 @@
     </div>
 
     <div class="adicionar-cota__footer">
-      <button class="btn btn-secondary" click.delegate="cancelar()" style="margin-right: 15px;">Voltar</button>
-      <button class="btn btn-primary" click.delegate="salvar()">Salvar</button>
+      <button class="btn btn-secondary" click.delegate="cancelar()" style="margin-right: 15px;" id="voltar">Voltar</button>
+      <button class="btn btn-primary" click.delegate="salvar()" id="salvar">Salvar</button>
     </div>
   </card>
 </template>
